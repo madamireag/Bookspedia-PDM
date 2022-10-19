@@ -5,13 +5,18 @@
              Title="Books">
 
     <StackLayout>
+        <Label
+                Text="New Releases in FICTION " 
+                FontAttributes="Bold"
+                Padding="10"/>
         <ListView 
                 x:Name="listViewBooks"                
-                BackgroundColor="{DynamicResource WindowBackground}"
+                
                 HasUnevenRows="true"
                 SeparatorVisibility="None"               
                 IsPullToRefreshEnabled="true"               
-                CachingStrategy="RecycleElement" >
+                CachingStrategy="RecycleElement" 
+                ItemSelected="listViewBooks_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

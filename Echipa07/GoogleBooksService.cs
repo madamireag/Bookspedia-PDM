@@ -45,14 +45,14 @@ namespace Echipa07
             return null;
         }
 
-        public static async Task<BookDetails> getBooksDetails(string id)
+        public static async Task<Book> getBooksDetails(string id)
         {
             return await getBooksDetailsAsync(id);
         }
 
-        public static async Task<BookDetails> getBooksDetailsAsync(string id)
+        public static async Task<Book> getBooksDetailsAsync(string id)
         {
-            var restUrl = $"{baseURL}/{id}&key={apiKey}";
+            var restUrl = $"{baseURL}/{id}";
             HttpClient httpClient = new HttpClient();
             try
             {
@@ -62,7 +62,7 @@ namespace Echipa07
                     {
                         using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
                         {
-                            return JsonConvert.DeserializeObject<BookDetails>(
+                            return JsonConvert.DeserializeObject<Book>(
                                 await new StreamReader(responseStream).ReadToEndAsync().ConfigureAwait(false));
                         }
                     }

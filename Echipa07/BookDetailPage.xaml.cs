@@ -11,5 +11,5 @@ public partial class BookDetailPage : ContentPage
         BindingContext = viewModel;
     }
 
-    
+
 }

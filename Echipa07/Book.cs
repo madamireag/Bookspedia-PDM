@@ -20,14 +20,7 @@ namespace Echipa07
 
         [JsonProperty(PropertyName = "saleInfo")]
         public ItemSaleInfo SaleInfo { get; set; }
-
-        // aici e null ca am schimbat property name ca era la fel
-        [JsonProperty(PropertyName = "volumeInfoDetailed")]
-        public ItemVolumeInfo VolumeInfoDetailed { get; set; }
-
-        [JsonProperty(PropertyName = "saleInfoDetailed")]
-        public ItemSaleInfo SaleInfoDetailed { get; set; }
-
+        
         [JsonProperty(PropertyName = "accessInfo")]
         public ItemAccessInfo AccessInfo { get; set; }
 
@@ -93,6 +86,12 @@ namespace Echipa07
 
         [JsonProperty(PropertyName = "currencyCode")]
         public String CurrencyCode { get; set; }
+    }
+
+    public class ItemAccessInfo
+    {
+        [JsonProperty(PropertyName = "webReaderLink")]
+        public String WebReaderLink { get; set; }
     }
 
 }

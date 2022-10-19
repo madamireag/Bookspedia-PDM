@@ -4,13 +4,23 @@
              x:Class="Echipa07.AboutPage"
              Title="About Bookspedia">
     <ScrollView Orientation="Vertical">
-        <StackLayout >
-            <Image Source="books.png" WidthRequest="128" HeightRequest="128" VerticalOptions="CenterAndExpand"/>
-            <Label Text="Booooooooooooooks" 
+        <StackLayout BackgroundColor="#D8BFD8">
+            <Image Source="books.png"   WidthRequest="128" HeightRequest="128" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <Label
+                   Text="What I will read today?" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+            <Label
+                   Text="The Bookspedia application offers you a varied list of books with price details, people rating and more." 
                    VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>
-           
-           
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Label
+                   Text="More than that, you can search for any book and add it to your favorite list!" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

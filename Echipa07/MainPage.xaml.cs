@@ -9,17 +9,6 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
         Task.Run(async () => { await InitializeazaListaCarti(); }).Wait();
-
-        listViewBooks.ItemSelected += async (sender, e) =>
-        {
-            if (e.SelectedItem != null)
-            {
-                var detailBookPage = new BookDetailPage(e.SelectedItem as Book);
-                await Navigation.PushAsync(detailBookPage);
-                listViewBooks.SelectedItem = null;
-            }
-        };
-
     }
 
     public async Task InitializeazaListaCarti()
@@ -40,10 +29,10 @@ public partial class MainPage : ContentPage
         return booksList;
     }
 
-    //private void listViewBooks_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    //{
-    //    var detailBookPage = new BookDetailPage(e.SelectedItem as BookDetails);
-    //    Navigation.PushAsync(detailBookPage);
-    //}
+    private void listViewBooks_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        var detailBookPage = new BookDetailPage(e.SelectedItem as Book);
+        Navigation.PushAsync(detailBookPage);
+    }
 }
 
