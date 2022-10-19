@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Echipa07.BookDetailPage"
+             Title="Book Details">
+    <ScrollView>
+        <StackLayout>
+            <Label AutomationId="LabelTitle" Text="{Binding VolumeInfo.Title}" FontSize="Medium"
+                   TextColor="{AppThemeBinding Light=Purple, Dark=Purple}"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   Margin="10"/>
+            <StackLayout Spacing="1">
+                <Image
+                    HeightRequest="200"
+                    Source="{Binding VolumeInfo.ImageLinks.SmallThumbnail}"
+                    Aspect="AspectFit"/>
+            </StackLayout>
+
+            <Grid Padding="20" Margin="10" VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label  Grid.Column="0" Grid.Row="0" 
+                        Text="Authors: " FontSize="Medium" 
+                        FontAttributes="Bold" 
+                        TextColor="Black"/>
+                <Label Grid.Column="1" Grid.Row="0" 
+                       Text="{Binding VolumeInfo.Authors[0]}" 
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Label Grid.Column="0" Grid.Row="1" 
+                       Text="Description:" 
+                       FontSize="Medium" 
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+                <Label Grid.Column="1" Grid.Row="1" 
+                       Text="{Binding VolumeInfo.Description}" 
+                       FontSize="Medium"
+                       TextColor="Black"/>
+                <Label Grid.Column="0" Grid.Row="2" 
+                       Text="No of pages:" 
+                       FontSize="Medium" 
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+                <Label Grid.Column="1" Grid.Row="2" 
+                       Text="{Binding VolumeInfo.PageCount}" 
+                       FontSize="Medium"
+                       TextColor="Black"/>
+                <Label Grid.Column="0" Grid.Row="3" 
+                       Text="Saleability:" 
+                       FontSize="Medium" 
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+                <Label Grid.Column="1" Grid.Row="3" 
+                       Text="{Binding SaleInfo.Saleability}"
+                       FontSize="Medium"
+                       TextColor="Black"/>
+                <Label Grid.Column="0" Grid.Row="4" 
+                       Text="Price:" 
+                       FontSize="Medium" 
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+                <Label Grid.Column="1" Grid.Row="4" 
+                       Text="{Binding SaleInfo.RetailPrice.Amount}" 
+                       FontSize="Medium"
+                       TextColor="Black"/>
+                <Label Grid.Column="2" Grid.Row="4" 
+                       Text="{Binding SaleInfo.RetailPrice.CurrencyCode}" 
+                       FontSize="Medium"
+                       TextColor="Black"/>
+                <Label Grid.Column="0" 
+                       Grid.Row="5" 
+                       Text="Web Reader Link:" 
+                       FontSize="Medium" 
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+                <Label Grid.Column="1" 
+                       Grid.Row="5" 
+                       Text="{Binding AccessInfo.WebReaderLink}" 
+                       FontSize="Medium"
+                       TextColor="Black"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

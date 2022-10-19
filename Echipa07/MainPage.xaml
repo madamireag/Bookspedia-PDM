@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Echipa07.MainPage"
+             Title="Books">
+
+    <StackLayout>
+        <ListView 
+                x:Name="listViewBooks"                
+                BackgroundColor="{DynamicResource WindowBackground}"
+                HasUnevenRows="true"
+                SeparatorVisibility="None"               
+                IsPullToRefreshEnabled="true"               
+                CachingStrategy="RecycleElement" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                AutomationId="ImageViewCell"
+                                WidthRequest="200"
+                                HeightRequest="150"
+                                Source="{Binding VolumeInfo.ImageLinks.SmallThumbnail}" />
+                            <StackLayout  
+                                Grid.Column="1"
+                                Margin="5" Orientation="Vertical">
+                                <Label Text="{Binding VolumeInfo.Title}"
+                                    TextColor="Black"
+                                    AutomationId="LabelTitle"
+                                    FontSize="16"
+                                    FontAttributes="Bold" /> 
+                                <Grid Padding="6" Margin="2" VerticalOptions="End">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label  Grid.Column="0" Grid.Row="0" 
+                                        Text="Author: " 
+                                        TextColor="Black"
+                                        FontSize="13"
+                                        FontAttributes="Bold" />
+                                    <Label  Grid.Column="1" Grid.Row="0" 
+                                        Text="{Binding VolumeInfo.Authors[0]}" 
+                                        TextColor="Black"
+                                        FontSize="13" />
+                                    <Label  Grid.Column="2" Grid.Row="0" 
+                                        Text="{Binding VolumeInfo.Authors[1]}" 
+                                        TextColor="Black"
+                                        FontSize="13" />
+                                    <Label  Grid.Column="0" Grid.Row="1" 
+                                        Text="Category: " 
+                                        TextColor="Black"
+                                        FontSize="13"
+                                        FontAttributes="Bold" />
+                                    <Label  Grid.Column="1" Grid.Row="1" 
+                                        Text="{Binding VolumeInfo.Category[0]}" 
+                                        TextColor="Black"
+                                        FontSize="13" />
+                                    <Label  Grid.Column="0" Grid.Row="2" 
+                                        Text="Rating: " 
+                                        TextColor="Black"
+                                        FontSize="13"
+                                        FontAttributes="Bold" />
+                                    <Label  Grid.Column="1" Grid.Row="2" 
+                                        Text="{Binding VolumeInfo.AverageRating}" 
+                                        TextColor="Black"
+                                        FontSize="13" />
+                                    <Label  Grid.Column="0" Grid.Row="3" 
+                                        Text="Price: " 
+                                        TextColor="Black"
+                                        FontSize="13"
+                                        FontAttributes="Bold" />
+                                    <Label  Grid.Column="1" Grid.Row="3" 
+                                        Text="{Binding SaleInfo.RetailPrice.Amount}" 
+                                        TextColor="Black"
+                                        FontSize="13" />
+                                    <Label  Grid.Column="2" Grid.Row="3" 
+                                        Text="{Binding SaleInfo.RetailPrice.CurrencyCode}" 
+                                        TextColor="Black"
+                                        FontSize="13" />
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
