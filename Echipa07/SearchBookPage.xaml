@@ -17,6 +17,9 @@
                 <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Add to favourites" Clicked="MenuItem_Clicked"/>
+                        </ViewCell.ContextActions>
                         <Grid Padding="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200"/>
