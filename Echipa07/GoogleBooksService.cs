@@ -17,7 +17,10 @@ namespace Echipa07
         {
             return await getBooks();
         }
-
+        public static async Task<Items> GetBooksByTitle(string title)
+        {
+            return await getBooksDetailsByTitleAsync(title);
+        }
         public static async Task<Items> getBooks()
         {
             
@@ -74,5 +77,30 @@ namespace Echipa07
             }
             return null;
         }
+        public static async Task<Items> getBooksDetailsByTitleAsync(string title)
+        {
+            var restUrl = $"{baseURL}/{queryPath}/{title}";
+            HttpClient httpClient = new HttpClient();
+            try
+            {
+                using (var response = await httpClient.GetAsync(restUrl).ConfigureAwait(false))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
+                        {
+                            return JsonConvert.DeserializeObject<Items>(
+                                await new StreamReader(responseStream).ReadToEndAsync().ConfigureAwait(false));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return null;
+        }
+
     }
 }
