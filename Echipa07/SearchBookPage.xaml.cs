@@ -23,4 +23,12 @@ public partial class SearchBookPage : ContentPage
         
 
     }
+
+    private void Review_Clicked(object sender, EventArgs e)
+    {
+        MenuItem menuItem = sender as MenuItem;
+        var contextItem = menuItem.BindingContext;
+        AddReview addReviewPage = new AddReview(contextItem as Book);
+        Navigation.PushAsync(addReviewPage);
+    }
 }

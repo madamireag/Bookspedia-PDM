@@ -19,6 +19,7 @@
                     <ViewCell>
                         <ViewCell.ContextActions>
                             <MenuItem Text="Add to favourites" Clicked="MenuItem_Clicked"/>
+                            <MenuItem Text="Add Review" Clicked="Review_Clicked"/>
                         </ViewCell.ContextActions>
                         <Grid Padding="10">
                             <Grid.ColumnDefinitions>

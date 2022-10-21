@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Echipa07.AddReview"
+             Title="AddReview">
+    <VerticalStackLayout>
+        <Entry x:Name="reviewEntry"
+               Placeholder="Enter book review" HeightRequest="100"/>
+
+        <Button Text="Add"
+                Clicked="AddButton_Clicked" />
+        <StackLayout Orientation="Vertical" HorizontalOptions="Fill" Margin="10">
+            <ListView x:Name="lstRev"  HasUnevenRows="true"
+                SeparatorVisibility="None"               
+                IsPullToRefreshEnabled="true"               
+                CachingStrategy="RecycleElement" ItemsSource="{Binding reviewList}" SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <Grid VerticalOptions="CenterAndExpand" Padding="10" BackgroundColor="LightGray" ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding BookTitle}" Grid.Column="0" Grid.Row="0" TextColor="Black"/>
+                                    <Label Text="{Binding ReviewText}" Grid.Column="1" Grid.Row="0" TextColor="Black"/>
+                                 </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
