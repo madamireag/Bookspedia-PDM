@@ -23,6 +23,7 @@ public partial class MainPage : ContentPage
         var booksArray = await GoogleBooksService.getAllBooks();
         foreach (var book in booksArray.Itemss)
         {
+            SearchBookViewModel.CheckBook(book);
             booksList.Add(book);
         }
         listViewBooks.ItemsSource = booksList;

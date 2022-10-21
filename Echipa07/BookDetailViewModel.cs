@@ -26,8 +26,10 @@ namespace Echipa07
             if (bookId != null)
             {
                 var bookDetails = await GoogleBooksService.getBooksDetails(bookId).ConfigureAwait(false);
+               
                 if (bookDetails != null)
                 {
+                    SearchBookViewModel.CheckBook(bookDetails);
                     Book = bookDetails;
                 }
             }
