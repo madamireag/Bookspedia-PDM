@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Echipa07
 {
     public class Book
     {
+        
         [JsonProperty(PropertyName = "kind")]
         public String Kind { get; set; }
 

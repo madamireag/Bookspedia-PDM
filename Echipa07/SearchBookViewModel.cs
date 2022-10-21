@@ -72,6 +72,11 @@ namespace Echipa07
             var list = books.Itemss;
             foreach (var book in list)
             {
+                if (book.VolumeInfo.ImageLinks == null)
+                {
+                    book.VolumeInfo.ImageLinks = new ImageLinks();
+                    book.VolumeInfo.ImageLinks.SmallThumbnail = new Uri("https://www.nicepng.com/png/detail/10-104761_books-png-image-school-pinterest-images-transparent-background.png").ToString();
+                }
                 searchResults.Add(book);
             }
             return searchResults;

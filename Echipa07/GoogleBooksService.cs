@@ -79,7 +79,7 @@ namespace Echipa07
         }
         public static async Task<Items> getBooksDetailsByTitleAsync(string title)
         {
-            var restUrl = $"{baseURL}/{queryPath}/{title}";
+            var restUrl = $"{baseURL}/{queryPath}/intitle:{title}";
             HttpClient httpClient = new HttpClient();
             try
             {

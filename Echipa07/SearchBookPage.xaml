@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.SearchBookPage"
-             Title="Search books by ...">
+             Title="Search books by title">
           <StackLayout Orientation="Vertical" >
             <SearchBar x:Name="SearchBar"
                 SearchCommand="{Binding SearchCommand}"
