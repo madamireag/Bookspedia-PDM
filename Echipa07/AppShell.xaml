@@ -15,7 +15,7 @@
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>
-    <FlyoutItem Title="Search books by ...">
+    <FlyoutItem Title="Search books by title">
         <ShellContent
             ContentTemplate="{DataTemplate local:SearchBookPage}"
             Route="SearchBookPage" />

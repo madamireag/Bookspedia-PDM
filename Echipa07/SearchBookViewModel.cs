@@ -82,6 +82,29 @@ namespace Echipa07
                 book.VolumeInfo.AverageRating = new String("No Rating");
                 
             }
+            if(book.VolumeInfo.Description != null)
+            {
+                if(book.VolumeInfo.Description.Contains("<br>"))
+                {
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("<br>", "");
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("</br>", "");
+                }
+                if (book.VolumeInfo.Description.Contains("<p>"))
+                {
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("<p>", Environment.NewLine);
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("</p>", Environment.NewLine);
+                }
+                if (book.VolumeInfo.Description.Contains("<b>"))
+                {
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("<b>", "");
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("</b>", "");
+                }
+                if (book.VolumeInfo.Description.Contains("<i>"))
+                {
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("<i>", "");
+                    book.VolumeInfo.Description = book.VolumeInfo.Description.Replace("</i>", "");
+                }
+            }
         }
         private async Task<ObservableCollection<Book>> LoadSearchedBooks(string SearchTerm)
         {

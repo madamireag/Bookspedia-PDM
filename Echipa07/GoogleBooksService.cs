@@ -24,7 +24,7 @@ namespace Echipa07
         public static async Task<Items> getBooks()
         {
             
-            var restUrl = $"{baseURL}{queryPath}subject:fiction&key={apiKey}&orderBy=newest&maxResults=8";
+            var restUrl = $"{baseURL}{queryPath}subject:fiction&key={apiKey}&orderBy=newest&maxResults=12";
             HttpClient httpClient = new HttpClient();
             try
             {
