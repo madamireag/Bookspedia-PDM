@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.BookDetailPage"
              Title="Book Details">
-    <ScrollView>
+    <ScrollView  Orientation="Vertical">
         <StackLayout>
             <Label AutomationId="LabelTitle" Text="{Binding Book.VolumeInfo.Title}" FontSize="Medium"
                    TextColor="{AppThemeBinding Light=#9F2B68, Dark=#9F2B68}"
@@ -80,12 +80,12 @@
                 <Label Grid.Column="1" Grid.Row="3" 
                        Text="{Binding Book.VolumeInfo.AverageRating}" 
                        TextColor="Black"
-                       FontSize="16" />
-                <Label  Grid.Column="0" Grid.Row="4" 
-                        Text="Category: " 
-                        FontSize="17" 
-                        FontAttributes="Bold" 
-                        TextColor="Black"/>
+                       FontSize="16"/>
+                <Label Grid.Column="0" Grid.Row="4" 
+                       Text="Category: " 
+                       FontSize="17" 
+                       FontAttributes="Bold" 
+                       TextColor="Black"/>
                 <Label Grid.Column="1" Grid.Row="4" 
                        Text="{Binding Book.VolumeInfo.Category[0]}" 
                        FontSize="16"

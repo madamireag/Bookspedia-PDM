@@ -3,24 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.AboutPage"
              Title="About Bookspedia">
-    <ScrollView Orientation="Vertical">
-        <StackLayout BackgroundColor="#D8BFD8">
-            <Image Source="books.png"   WidthRequest="128" HeightRequest="128" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-            <Label
-                   Text="What I will read today?" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center"
-                   TextColor="White"/>
-            <Label
-                   Text="The Bookspedia application offers you a varied list of books with price details, people rating and more." 
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"
-                   TextColor="White"/>
-            <Label
-                   Text="More than that, you can search for any book and add it to your favorite list!" 
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"
-                   TextColor="White"/>
-        </StackLayout>
-    </ScrollView>
+
+    <StackLayout BackgroundColor="#D8BFD8" Orientation="Vertical">
+        <Label
+               Text="Bookspedia - one click away from the world of books" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="White"
+               FontAttributes="Bold"
+               FontSize="17"
+               Padding="10"/>
+        <Image Source="books2.png"  WidthRequest="248" HeightRequest="248"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        <Label
+               Text="The Bookspedia application offers you a varied list of books with price details, people rating and book details." 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="White"/>
+        <Image Source="books.png" WidthRequest="128" HeightRequest="128" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        <Label
+               Text="More than that, you can search for any book and add it to your favorite list. Also, you can add any review to help other book lovers!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="White"
+               Padding="15"/>
+    </StackLayout>
+    
 </ContentPage>

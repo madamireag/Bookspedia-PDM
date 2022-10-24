@@ -4,7 +4,7 @@
              x:Class="Echipa07.MainPage"
              Title="Books">
 
-    <StackLayout>
+    <StackLayout Orientation="Vertical">
         <Label
                 Text="New Releases in FICTION " 
                 FontAttributes="Bold"
@@ -81,6 +81,10 @@
                                         Text="{Binding VolumeInfo.AverageRating}" 
                                         TextColor="Black"
                                         FontSize="13" />
+                                    <Image Grid.Column="1" Grid.Row="2" 
+                                        Source="star_icon.png"
+                                        WidthRequest="15"
+                                        HeightRequest="15"/>
                                     <Label  Grid.Column="0" Grid.Row="3" 
                                         Text="Price: " 
                                         TextColor="Black"
