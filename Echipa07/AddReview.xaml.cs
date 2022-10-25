@@ -11,12 +11,13 @@ public partial class AddReview : ContentPage
 		myReview.BookTitle = b.VolumeInfo.Title;
 	}
 
-	private void AddButton_Clicked(object sender, EventArgs e)
+	private async void AddButton_Clicked(object sender, EventArgs e)
 	{
 		String rev = reviewEntry.Text;
 		myReview.ReviewText = rev;
 		reviewCarteDao.AdaugaReview(myReview);
-	}
+        await DisplayAlert("Review added!", "", "OK");
+    }
 
 	protected override void OnAppearing()
 	{

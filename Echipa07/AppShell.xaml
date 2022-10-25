@@ -10,7 +10,7 @@
             ContentTemplate="{DataTemplate local:AboutPage}"
             Route="AboutPage" />
     </FlyoutItem>
-    <FlyoutItem Title="Bookspedia">
+    <FlyoutItem Title="Books">
         <ShellContent
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
