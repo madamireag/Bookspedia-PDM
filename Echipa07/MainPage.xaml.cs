@@ -8,15 +8,15 @@ public partial class MainPage : ContentPage
     public MainPage()
 	{
 		InitializeComponent();
-        Task.Run(async () => { await InitializeazaListaCarti(); }).Wait();
+        Task.Run(async () => { await InitializeBookList(); }).Wait();
     }
 
-    public async Task InitializeazaListaCarti()
+    public async Task InitializeBookList()
     {
-        booksList = await ObtineCartiDinServiciu();
+        booksList = await GetBooksFromService();
     }
 
-    public async Task<List<Book>> ObtineCartiDinServiciu()
+    public async Task<List<Book>> GetBooksFromService()
     {
 
         booksList = new List<Book>();

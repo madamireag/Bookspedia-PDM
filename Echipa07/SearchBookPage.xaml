@@ -5,8 +5,9 @@
              Title="Search books by title">
           <StackLayout Orientation="Vertical" >
             <SearchBar x:Name="SearchBar"
-                SearchCommand="{Binding SearchCommand}"
-                SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                       Placeholder="Search title"
+                       SearchCommand="{Binding SearchCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
             </SearchBar>
             <ListView
                 x:Name="LvSearch"

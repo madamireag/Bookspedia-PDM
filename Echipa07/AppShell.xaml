@@ -20,6 +20,11 @@
             ContentTemplate="{DataTemplate local:SearchBookPage}"
             Route="SearchBookPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Books categories">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:BooksCategoriesPage}"
+            Route="BooksCategoriesPage" />
+    </FlyoutItem>
     <FlyoutItem Title="Contact us">
         <ShellContent
             ContentTemplate="{DataTemplate local:ContactPage}"

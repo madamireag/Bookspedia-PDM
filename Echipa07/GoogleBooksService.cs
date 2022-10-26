@@ -23,7 +23,7 @@ namespace Echipa07
         }
         public static async Task<Items> getBooks()
         {
-            
+
             var restUrl = $"{baseURL}{queryPath}subject:fiction&key={apiKey}&orderBy=newest&maxResults=12";
             HttpClient httpClient = new HttpClient();
             try
@@ -36,7 +36,7 @@ namespace Echipa07
                         {
                             return JsonConvert.DeserializeObject<Items>(
                                 await new StreamReader(responseStream).ReadToEndAsync().ConfigureAwait(false));
-                            
+
                         }
                     }
                 }
@@ -102,5 +102,30 @@ namespace Echipa07
             return null;
         }
 
+        public static async Task<Items> getBooksCategories(string category)
+        {
+            var restUrl = $"{baseURL}{queryPath}/subject:{category}&maxResults=40";
+            HttpClient httpClient = new HttpClient();
+            try
+            {
+                using (var response = await httpClient.GetAsync(restUrl).ConfigureAwait(false))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        using (var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false))
+                        {
+                            return JsonConvert.DeserializeObject<Items>(
+                                await new StreamReader(responseStream).ReadToEndAsync().ConfigureAwait(false));
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            return null;
+        }
     }
 }

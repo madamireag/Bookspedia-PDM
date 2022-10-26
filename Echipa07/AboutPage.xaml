@@ -13,19 +13,19 @@
                FontAttributes="Bold"
                FontSize="17"
                Padding="10"/>
-        <Image Source="books2.png"  WidthRequest="248" HeightRequest="248"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        <Image Source="books2.png"  WidthRequest="248" HeightRequest="248" />
         <Label
                Text="The Bookspedia application offers you a varied list of books with price details, people rating and book details." 
                VerticalOptions="Center" 
                HorizontalOptions="Center"
                TextColor="White"/>
-        <Image Source="books.png" WidthRequest="128" HeightRequest="128" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        <Image Source="books.png" WidthRequest="128" HeightRequest="128" />
         <Label
                Text="More than that, you can search for any book and add it to your favorite list. Also, you can add any review to help other book lovers!" 
                VerticalOptions="Center" 
                HorizontalOptions="Center"
                TextColor="White"
-               Padding="15"/>
+               Padding="20"/>
     </StackLayout>
     
 </ContentPage>
