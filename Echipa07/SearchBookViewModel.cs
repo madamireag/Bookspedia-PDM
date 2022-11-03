@@ -13,7 +13,7 @@ using System.Windows.Input;
 
 namespace Echipa07
 {
-    public class SearchBookViewModel : INotifyPropertyChanged
+    public class SearchBookViewModel : BindableBase,INotifyPropertyChanged
     {
         private List<Book> books;
         private string _searchTerm;
@@ -30,7 +30,32 @@ namespace Echipa07
 
             }
         }
+        private Book _book;
+        public static List<Book> Books = new List<Book>();
 
+        public ICommand AddToFavoritesCommand => new Command<Book>(ExecuteAddToFavoritesCommand);
+        public void ExecuteAddToFavoritesCommand(Book book)
+        {
+
+            try
+            {
+                Task.Run(async () => {
+                    if (!Books.Any(id => id.Id == this.Book.Id))
+                    {
+                        Books.Add(this.Book);
+                    }
+                }).Wait();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+        public Book Book
+        {
+            get { return _book; }
+            set { SetProperty(ref _book, value); }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<Book> _searchResults { get; set; }
         public ObservableCollection<Book> searchResults

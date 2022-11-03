@@ -4,12 +4,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Echipa07
 {
     public class BookDetailViewModel: BindableBase
     {
         private Book _book;
+        //public static List<Book> Books = new List<Book>();
+
+        //public ICommand AddToFavoritesCommand => new Command<Book>(ExecuteAddToFavoritesCommand);
+        //public void ExecuteAddToFavoritesCommand(Book book)
+        //{
+
+        //    try
+        //    {
+        //        Task.Run(async () => {
+        //            if (!Books.Any(id => id.Id == this.Book.Id))
+        //            {
+        //                Books.Add(this.Book);
+        //            }
+        //        }).Wait();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.ToString());
+        //    }
+        //}
         public Book Book
         {
             get { return _book; }

@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Echipa07.SearchBookPage"
-             Title="Search books by title">
-          <StackLayout Orientation="Vertical" >
-            <SearchBar x:Name="SearchBar"
-                       Placeholder="Search title"
-                       SearchCommand="{Binding SearchCommand}"
-                       SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
-            </SearchBar>
-            <ListView
-                x:Name="LvSearch"
-                BackgroundColor="White"
-                AutomationId="ItemsListView"
-                ItemsSource="{Binding searchResults}"
-                SeparatorVisibility="None">
-                <ListView.ItemTemplate>
+             x:Class="Echipa07.Favourites"
+             Title="Favourites">
+    <StackLayout Orientation="Vertical">
+        <Label
+                Text="New Releases in FICTION " 
+                FontAttributes="Bold"
+                Padding="10"/>
+        <ListView 
+                x:Name="listViewBooks"                
+                
+                HasUnevenRows="true"
+                SeparatorVisibility="None"               
+                IsPullToRefreshEnabled="true"               
+                CachingStrategy="RecycleElement" 
+                ItemsSource="{Binding favoriteResults}">
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.ContextActions>
-                            <MenuItem Text="Add to favourites" Command="{Binding AddToFavoritesCommand}" Clicked="MenuItem_Clicked"/>
-                            <MenuItem Text="Add Review" Clicked="Review_Clicked"/>
-                        </ViewCell.ContextActions>
                         <Grid Padding="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200"/>
@@ -83,6 +80,10 @@
                                         Text="{Binding VolumeInfo.AverageRating}" 
                                         TextColor="Black"
                                         FontSize="13" />
+                                    <Image Grid.Column="1" Grid.Row="2" 
+                                        Source="star_icon.png"
+                                        WidthRequest="15"
+                                        HeightRequest="15"/>
                                     <Label  Grid.Column="0" Grid.Row="3" 
                                         Text="Price: " 
                                         TextColor="Black"
@@ -102,6 +103,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-   </ContentPage>
+        </ListView>
+    </StackLayout>
+</ContentPage>

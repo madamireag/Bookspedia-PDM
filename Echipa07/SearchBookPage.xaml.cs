@@ -6,12 +6,14 @@ public partial class SearchBookPage : ContentPage
 {
     SearchBookViewModel viewModel1 { get; set; }
     List<Book> favouriteBooks = new List<Book>();
+
     
     public SearchBookPage()
 	{
 		InitializeComponent();
         viewModel1 = new SearchBookViewModel();
         BindingContext = viewModel1;
+     
 
     }
 
@@ -20,7 +22,9 @@ public partial class SearchBookPage : ContentPage
         MenuItem menuItem = sender as MenuItem;
         var contextItem = menuItem.BindingContext;
         favouriteBooks.Add(contextItem as Book);
-        
+        SearchBookViewModel.Books.Add(contextItem as Book);
+
+
 
     }
 

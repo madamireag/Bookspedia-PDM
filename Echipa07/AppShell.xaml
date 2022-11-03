@@ -19,6 +19,11 @@
         <ShellContent
             ContentTemplate="{DataTemplate local:SearchBookPage}"
             Route="SearchBookPage" />
+            </FlyoutItem>
+    <FlyoutItem Title="Favourite Books">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Favourites}"
+            Route="Favourites" />
     </FlyoutItem>
     <FlyoutItem Title="Books categories">
         <ShellContent
@@ -30,5 +35,4 @@
             ContentTemplate="{DataTemplate local:ContactPage}"
             Route="ContactPage" />
     </FlyoutItem>
-
 </Shell>
