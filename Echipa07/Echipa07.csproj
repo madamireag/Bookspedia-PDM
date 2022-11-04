@@ -49,6 +49,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\email.png" />
+	  <None Remove="Resources\Images\telephone.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="Microcharts" Version="0.9.5.9" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	  <PackageReference Include="Prism.Core" Version="8.1.97" />

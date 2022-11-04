@@ -3,10 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.ContactPage"
              Title="Contact">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
+    <StackLayout BackgroundColor="#D8BFD8" 
+                 Spacing="10">
+        <Label
+               Text="If you have any question, Bookspedia Team is here to answer" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="White"
+               FontAttributes="Bold"
+               FontSize="17"
+               Padding="10"/>
+        <Entry
+            x:Name="entryName"
+            Placeholder="Full name"
+            PlaceholderColor="White"
+            WidthRequest="350"/>
+        <Editor
+            x:Name="editorEmail"
+            Keyboard="Email"
+            Placeholder="Email"
+            PlaceholderColor="White"
+            WidthRequest="350"/>
+        <Editor
+            x:Name="editorMessage"
+            Placeholder="Please write your message :)"
+            PlaceholderColor="White"
+            WidthRequest="500"
+            HeightRequest="30"/>
+        <Button 
+            x:Name="buttonContact"
+            BackgroundColor="#8D538D"
+            Text="Contact Us"
+            TextColor="White"
+            HeightRequest="40"
+            WidthRequest="150"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"
+            Clicked="buttonContact_Clicked"/>
+        <Image 
+            Source="telephone.png" 
+            WidthRequest="35" 
+            HeightRequest="35"
+            VerticalOptions="End" 
+            HorizontalOptions="End"
+            Margin="5"
+            />
+        <Label
+            Text="0756304567"
+            TextColor="White"
+            VerticalOptions="End" 
+            HorizontalOptions="End"
+            Margin="5"></Label>
+
+        <Image 
+            Source="email.png" 
+            WidthRequest="35" 
+            HeightRequest="35"
+            VerticalOptions="End" 
+            HorizontalOptions="End"
+            Margin="5"
+            />
+        <Label
+            Text="contact@bookspedia.com"
+            TextColor="White"
+            VerticalOptions="End" 
+            HorizontalOptions="End"
+            Margin="5"/>
+    </StackLayout>
 </ContentPage>
