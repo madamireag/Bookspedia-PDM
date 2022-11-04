@@ -4,7 +4,7 @@
              x:Class="Echipa07.BooksCategoriesPage"
              xmlns:chart="clr-namespace:Echipa07"
              Title="Books categories">
-    <StackLayout>
+    <StackLayout BackgroundColor="#D8BFD8">
         <Grid ColumnDefinitions="Auto,*" Margin="8">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>

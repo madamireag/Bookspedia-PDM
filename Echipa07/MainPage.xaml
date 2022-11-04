@@ -4,7 +4,7 @@
              x:Class="Echipa07.MainPage"
              Title="Books">
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout BackgroundColor="#D8BFD8" Orientation="Vertical">
         <Label
                 Text="New Releases in FICTION " 
                 FontAttributes="Bold"

@@ -3,11 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.Favourites"
              Title="Favourites">
-    <StackLayout Orientation="Vertical">
-        <Label
-                Text="New Releases in FICTION " 
-                FontAttributes="Bold"
-                Padding="10"/>
+    <StackLayout Orientation="Vertical" BackgroundColor="#D8BFD8">
+     
         <ListView 
                 x:Name="listViewBooks"                
                 

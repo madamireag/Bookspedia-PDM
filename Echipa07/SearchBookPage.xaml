@@ -3,18 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.SearchBookPage"
              Title="Search books by title">
-          <StackLayout Orientation="Vertical" >
+    <StackLayout BackgroundColor="#D8BFD8" Padding="10" Orientation="Vertical" >
             <SearchBar x:Name="SearchBar"
                        Placeholder="Search title"
                        SearchCommand="{Binding SearchCommand}"
+                       
                        SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
             </SearchBar>
             <ListView
                 x:Name="LvSearch"
-                BackgroundColor="White"
-                AutomationId="ItemsListView"
+                HasUnevenRows="true"
+                SeparatorVisibility="None"               
+                IsPullToRefreshEnabled="true"               
+                CachingStrategy="RecycleElement"
+                
                 ItemsSource="{Binding searchResults}"
-                SeparatorVisibility="None">
+                >
                 <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

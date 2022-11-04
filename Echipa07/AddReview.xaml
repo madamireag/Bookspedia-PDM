@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.AddReview"
              Title="AddReview">
-    <VerticalStackLayout>
+    <VerticalStackLayout BackgroundColor="#D8BFD8">
         <Entry x:Name="reviewEntry"
                Placeholder="Enter book review" HeightRequest="100"/>
 
