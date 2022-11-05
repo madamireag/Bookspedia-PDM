@@ -17,19 +17,21 @@
             x:Name="entryName"
             Placeholder="Full name"
             PlaceholderColor="White"
-            WidthRequest="350"/>
+            WidthRequest="300"
+            />
         <Editor
             x:Name="editorEmail"
             Keyboard="Email"
             Placeholder="Email"
             PlaceholderColor="White"
-            WidthRequest="350"/>
+            WidthRequest="300"
+            />
         <Editor
             x:Name="editorMessage"
             Placeholder="Please write your message :)"
             PlaceholderColor="White"
-            WidthRequest="500"
-            HeightRequest="30"/>
+            WidthRequest="350"
+            />
         <Button 
             x:Name="buttonContact"
             BackgroundColor="#8D538D"
