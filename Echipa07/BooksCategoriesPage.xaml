@@ -11,11 +11,14 @@
             </Grid.RowDefinitions>
             <Label 
                  Grid.Column="0" Grid.Row="0"
-                 Text="Please choose book category" 
+                 Text="choose category" 
                  Padding="10"/>
             <Picker
                  Grid.Column="1" Grid.Row="0"
                  x:Name="categoriesPicker"
+                 Title="Select category"
+                 BackgroundColor="Lavender" 
+                IsVisible="True"
                  ItemsSource="{Binding categoriesList}"
                  VerticalOptions="Center"
                  SelectedIndexChanged="categoriesPicker_SelectedIndexChanged"/>

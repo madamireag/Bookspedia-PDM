@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Echipa07.AddReview"
              Title="AddReview">
-    <VerticalStackLayout BackgroundColor="#D8BFD8">
+    <StackLayout Orientation="Vertical" BackgroundColor="#D8BFD8">
         <Entry x:Name="reviewEntry"
                Placeholder="Enter book review" HeightRequest="100"/>
 
@@ -17,12 +17,12 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                            <Grid VerticalOptions="CenterAndExpand" Padding="10" BackgroundColor="LightGray" ColumnSpacing="0">
+                            <Grid VerticalOptions="CenterAndExpand" Padding="10" BackgroundColor="LightGray" ColumnSpacing="1">
                                 <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="200"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding BookTitle}" Grid.Column="0" Grid.Row="0" TextColor="Black"/>
+                                    <Label Text="{Binding BookTitle}"  Grid.Column="0" Grid.Row="0" TextColor="Black"/>
                                     <Label Text="{Binding ReviewText}" Grid.Column="1" Grid.Row="0" TextColor="Black"/>
                                  </Grid>
                             </ViewCell>
@@ -31,5 +31,5 @@
                 </ListView>
         
         </StackLayout>
-    </VerticalStackLayout>
+    </StackLayout>
 </ContentPage>
